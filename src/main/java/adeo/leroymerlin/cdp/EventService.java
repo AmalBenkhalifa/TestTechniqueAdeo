@@ -27,17 +27,23 @@ public class EventService {
     public List<Event> getFilteredEvents(String query) {
         List<Event> events = eventRepository.findAllBy();
         // Filter the events list in pure JAVA here
-         return events
+        return events
                 .stream()
                 .filter(event -> event.getBands()
                         .stream()
                         .filter(band -> band.getMembers()
                                 .stream()
-                                .filter(member -> member.getName().toLowerCase().contains(query))
+                                .filter(member -> member.getName().toLowerCase().contains(query.toLowerCase()))
                                 .count() > 0)
                         .count() > 0)
                 .collect(Collectors.toList());
+
+
     }
+
+
+
+
     public Event updateEvent(Event event) {
         return eventRepository.save(event);
     }
