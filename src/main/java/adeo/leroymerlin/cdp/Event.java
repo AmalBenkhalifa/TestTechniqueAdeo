@@ -13,7 +13,7 @@ public class Event {
 
     private String imgUrl;
 
-    @OneToMany(fetch=FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL,fetch=FetchType.EAGER)
     private Set<Band> bands;
 
     private Integer nbStars;
