@@ -37,13 +37,7 @@ public class EventService {
                                 .count() > 0)
                         .count() > 0)
                 .collect(Collectors.toList());
-
-
     }
-
-
-
-
     public Event updateEvent(Event event) {
         return eventRepository.save(event);
     }

@@ -44,7 +44,7 @@ public class EventControllerTest {
                 .andExpect(jsonPath("$.[2].id").value(1002))
                 .andExpect(jsonPath("$.[3].id").value(1003))
                 .andExpect(jsonPath("$.[4].id").value(1004));
-        ;
+
     }
 
     @Test
